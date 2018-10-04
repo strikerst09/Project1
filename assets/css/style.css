@@ -1,0 +1,34 @@
+body {
+    background-image: url("background_blank.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: rgb(131, 202, 179);
+   
+}
+
+.container {
+    background-color: rgb(196, 225, 250);
+    box-align: center;
+    width: 450px;
+    position: relative;
+    top: 150px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(66, 81, 94);
+    padding: 15px;
+    border-radius: 15px;
+}
+.header, .row {
+    text-align: center;
+    box-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 15px;
+}
+.input {
+    box-align: center;
+    text-align: center;
+}
+footer {
+    position: absolute;
+    bottom: 0%;
+
+}
