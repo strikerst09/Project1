@@ -7,3 +7,11 @@ h1 {
 h5 {
     color: white;
 }
+.moviePoster {
+    width: 25%;
+    float: left;
+    padding-right: 5px;
+}
+.results {
+    color: white;
+}
