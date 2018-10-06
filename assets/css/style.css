@@ -1,8 +1,8 @@
 body {
-    background-image: url("background_blank.jpg");
+    background-image: url("../images/background_blank.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
-    background-color: rgb(131, 202, 179);
+    /* background-color: rgb(131, 202, 179); */
    
 }
 
