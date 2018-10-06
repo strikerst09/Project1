@@ -74,7 +74,7 @@ logMovie.ref().on("child_added", function(snapshot) {
     let eachRecent = $("<button>").text(snapshot.val().title);
     eachRecent.attr("class", "srchBtn");
     recents.append(eachRecent);
-    $("#recentSrchs").append(recents);
+    $("#recentSrchs").prepend(recents);
 });
 
 $(document).on("click", ".srchBtn", function (event) {
