@@ -36,7 +36,10 @@ $(document).on("click", "#submitBtn", function (event) {
         })
 
         let movieDiv = $("<div>");
-        movieDiv.attr("class", "col12-sm results");
+        movieDiv.attr("class", "container");
+        let movieDiv2 = $("<div>");
+        movieDiv2.attr("class", "col12-sm");
+        movieDiv2.attr("class", "results");
         let moviePoster = $("<img>");
         moviePoster.attr("src", poster)
         moviePoster.attr("class", "moviePoster");
@@ -50,9 +53,10 @@ $(document).on("click", "#submitBtn", function (event) {
 
         movieList.append(movieTitle, movieRated, movieRating, moviePlot);
 
-        movieDiv.append(titleHeader);
-        movieDiv.append(moviePoster);
-        movieDiv.append(movieList);
+        movieDiv2.append(titleHeader);
+        movieDiv2.append(moviePoster);
+        movieDiv2.append(movieList);
+        movieDiv.append(movieDiv2);
         $("#resultsBox").prepend(movieDiv);
     })
 
@@ -69,7 +73,6 @@ $(document).on("click", "#submitBtn", function (event) {
 })
 
 logMovie.ref().on("child_added", function(snapshot) {
-
     let recents = $("<div>");
     let eachRecent = $("<button>").text(snapshot.val().title);
     eachRecent.attr("class", "srchBtn");
