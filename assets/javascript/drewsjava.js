@@ -14,7 +14,7 @@ let logMovie = firebase.database();
 $(document).on("click", "#submitBtn", function (event) {
     event.preventDefault();
 
-    let movie = $("#myDate").val().trim();
+    let movie = $("#myMovie").val().trim();
     let queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=5479d0ac";
 
     $.ajax({
@@ -22,18 +22,26 @@ $(document).on("click", "#submitBtn", function (event) {
         method: "GET"
     }).then(function (response) {
         let title = response.Title;
+        let year = response.Year;
+        let genre = response.Genre;
         let rated = response.Rated;
         let rating = (response.Ratings[1].Source) + ": " + (response.Ratings[1].Value);
         let plot = response.Plot;
         let poster = response.Poster;
 
+
         logMovie.ref().push({
             title: title,
+            year: year,
+            genre: genre,
             rated: rated,
             rating: rating,
             plot: plot,
             poster: poster,
+
+
         })
+        console.log(response)
 
         let movieDiv = $("<div>");
         movieDiv.attr("class", "container");
@@ -47,13 +55,16 @@ $(document).on("click", "#submitBtn", function (event) {
         titleHeader.text(title);
         let movieList = $("<ul>");
         let movieTitle = $("<li>").text(title);
+        let movieYear = $("<li>").text(year);
+        let movieGenre = $("<li>").text(genre);
         let movieRated = $("<li>").text(rated);
         let movieRating = $("<li>").text(rating);
         let moviePlot = $("<li>").text(plot);
 
-        movieList.append(movieTitle, movieRated, movieRating, moviePlot);
+        movieList.append(movieTitle, movieYear, movieGenre,movieRated, movieRating, moviePlot);
+        console.log(response)
 
-        movieDiv2.append(titleHeader);
+        movieDiv2.append(titleHeader); 
         movieDiv2.append(moviePoster);
         movieDiv2.append(movieList);
         movieDiv.append(movieDiv2);
@@ -92,13 +103,19 @@ $(document).on("click", ".srchBtn", function (event) {
         method: "GET"
     }).then(function (response) {
         let title = response.Title;
+        let year = response.Year;
+        let genre = response.Genre;
         let rated = response.Rated;
         let rating = (response.Ratings[1].Source) + ": " + (response.Ratings[1].Value);
         let plot = response.Plot;
         let poster = response.Poster;
 
+        console.log(response)
+
         logMovie.ref().push({
             title: title,
+            year: year,
+            genre: genre,
             rated: rated,
             rating: rating,
             plot: plot,
@@ -114,11 +131,13 @@ $(document).on("click", ".srchBtn", function (event) {
         titleHeader.text(title);
         let movieList = $("<ul>");
         let movieTitle = $("<li>").text(title);
+        let movieYear = $("<li>").text(year);
+        let movieGenre = $("<li>").text(genre);
         let movieRated = $("<li>").text(rated);
         let movieRating = $("<li>").text(rating);
         let moviePlot = $("<li>").text(plot);
 
-        movieList.append(movieTitle, movieRated, movieRating, moviePlot);
+        movieList.append(movieTitle, movieYear, movieGenre, movieRated, movieRating, moviePlot);
 
         movieDiv.append(titleHeader);
         movieDiv.append(moviePoster);
