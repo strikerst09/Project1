@@ -30,7 +30,7 @@ $(document).on("click", "#submitBtn", function (event) {
         let plot = response.Plot;
         let poster = response.Poster;
 
-
+// note to change 
         logMovie.ref().push({
             title: title,
             year: year,
