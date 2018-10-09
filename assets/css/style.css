@@ -1,7 +1,7 @@
 body {
     background-image: url("movie-background.jpg");
     background-size: 100%;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-color: rgb(131, 202, 179);
 }
 

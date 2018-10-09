@@ -78,6 +78,7 @@ $(document).on("click", "#submitBtn", function (event) {
     }).then(function (response) {
         let gif = $("<img>");
         gif.attr("src", response.data[0].images.fixed_height_small.url);
+        gif.attr("class", "gifClass");
 
         $("#gifsBox").prepend(gif);
     })
@@ -150,8 +151,10 @@ $(document).on("click", ".srchBtn", function (event) {
         url: queryURL2,
         method: "GET"
     }).then(function (response) {
+        console.log(response);
         let gif = $("<img>");
-        gif.attr("src", response.data[0].images.fixed_height_small.url);
+        gif.attr("src", response.data[0].images.fixed_height.url);
+        gif.attr("class", "gifClass");
 
         $("#gifsBox").prepend(gif);
     })
