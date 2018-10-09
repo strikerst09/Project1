@@ -25,6 +25,7 @@ $(document).on("click", "#submitBtn", function (event) {
         let year = response.Year;
         let genre = response.Genre;
         let rated = response.Rated;
+        let actors = response.Actors;
         let rating = (response.Ratings[1].Source) + ": " + (response.Ratings[1].Value);
         let plot = response.Plot;
         let poster = response.Poster;
@@ -35,6 +36,7 @@ $(document).on("click", "#submitBtn", function (event) {
             year: year,
             genre: genre,
             rated: rated,
+            actors: actors,
             rating: rating,
             plot: plot,
             poster: poster,
@@ -58,10 +60,11 @@ $(document).on("click", "#submitBtn", function (event) {
         let movieYear = $("<li>").text(year);
         let movieGenre = $("<li>").text(genre);
         let movieRated = $("<li>").text(rated);
+        let movieActors = $("<li>").text(actors);
         let movieRating = $("<li>").text(rating);
         let moviePlot = $("<li>").text(plot);
 
-        movieList.append(movieTitle, movieYear, movieGenre,movieRated, movieRating, moviePlot);
+        movieList.append(movieTitle, movieYear, movieGenre,movieRated, movieActors, movieRating, moviePlot);
         console.log(response)
 
         movieDiv2.append(titleHeader); 
@@ -111,6 +114,7 @@ $(document).on("click", ".srchBtn", function (event) {
         let year = response.Year;
         let genre = response.Genre;
         let rated = response.Rated;
+        let actors = response.Actors;
         let rating = (response.Ratings[1].Source) + ": " + (response.Ratings[1].Value);
         let plot = response.Plot;
         let poster = response.Poster;
@@ -122,6 +126,7 @@ $(document).on("click", ".srchBtn", function (event) {
             year: year,
             genre: genre,
             rated: rated,
+            actors: actors,
             rating: rating,
             plot: plot,
             poster: poster,
@@ -139,10 +144,11 @@ $(document).on("click", ".srchBtn", function (event) {
         let movieYear = $("<li>").text(year);
         let movieGenre = $("<li>").text(genre);
         let movieRated = $("<li>").text(rated);
+        let movieActors = $("<li>").text(actors);
         let movieRating = $("<li>").text(rating);
         let moviePlot = $("<li>").text(plot);
 
-        movieList.append(movieTitle, movieYear, movieGenre, movieRated, movieRating, moviePlot);
+        movieList.append(movieTitle, movieYear, movieGenre, movieRated, movieActors, movieRating, moviePlot);
 
         movieDiv.append(titleHeader);
         movieDiv.append(moviePoster);
