@@ -1,20 +1,42 @@
 body {
-    background-image: url("");
+    background-image: url("movie-background.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: rgb(131, 202, 179);
 }
+h1, h3, h5 {
+    color: black;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-weight: bold;
+}
+
 h1 {
-    color:white;
+    font-size: 50px;
+    text-align: center;
 }
+
 h5 {
-    color: white;
+    font-size: 30px;
+    text-align: center;
+
+}
+.container {
+    padding-right: 0;
+    padding-left: 0;
 }
 .moviePoster {
     float: left;
     padding: 5px;
     width: 100px;
 }
-.results {
-    color: white;
+.results, .col12-sm {
     padding: 2px;
     border-style: solid;
     border-width: 2px;
+    background-color: rgba(211, 211, 211, 0.8);
+}
+ul {
+    padding-inline-start: 120px;
 }
