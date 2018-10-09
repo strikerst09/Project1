@@ -83,9 +83,13 @@ $(document).on("click", "#submitBtn", function (event) {
     })
 })
 
-logMovie.ref().on("child_added", function(snapshot) {
+let counter = 1;
+
+logMovie.ref().limitToLast(5).on("child_added", function(snapshot) {
     let recents = $("<div>");
     let eachRecent = $("<button>").text(snapshot.val().title);
+    eachRecent.attr("counter", counter);
+    counter++;
     eachRecent.attr("class", "srchBtn");
     recents.append(eachRecent);
     $("#recentSrchs").prepend(recents);
