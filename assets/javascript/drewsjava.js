@@ -96,6 +96,8 @@ logMovie.ref().limitToLast(5).on("child_added", function(snapshot) {
     $("#recentSrchs").prepend(recents);
 });
 
+// It's Good.       
+
 $(document).on("click", ".srchBtn", function (event) {
     event.preventDefault();
     console.log(this);
