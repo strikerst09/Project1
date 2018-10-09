@@ -30,7 +30,7 @@ $(document).on("click", "#submitBtn", function (event) {
         let plot = response.Plot;
         let poster = response.Poster;
 
-
+// note to change 
         logMovie.ref().push({
             title: title,
             year: year,
@@ -98,6 +98,8 @@ logMovie.ref().limitToLast(5).on("child_added", function(snapshot) {
     recents.append(eachRecent);
     $("#recentSrchs").prepend(recents);
 });
+
+// It's Good.       
 
 $(document).on("click", ".srchBtn", function (event) {
     event.preventDefault();
