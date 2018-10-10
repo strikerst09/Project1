@@ -12,7 +12,6 @@
     crossorigin="anonymous">
 
   <link rel="stylesheet" href="assets/css/style1.css">
-  <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
 </head>
 
@@ -22,47 +21,102 @@
     <div class="row">
       <div class="col-sm-12">
         <h1>Your Favorite Movie!!!</h1>
+        <h2>Movie Search Options...</h2>
+
+        <input type="text" placeholder="enter movie title here" id="myMovie" value="">
+        <button id="submitBtn">movie info</button>
+        
+        <form onsubmit="go_gettrailer(); return false;">
+          <input type="hidden" id="myMovie" />
+          <input type="submit" value="movie trailer" />
+        </form>
+
+        <form onsubmit="go_getclip(); return false;">
+          <input type="hidden" id="myMovie" />
+          <input type="submit" value="movie clips" />
+        </form>
+
+        <form onsubmit="go_getmusic(); return false;">
+          <input type="hidden" id="myMovie" />
+          <input type="submit" value="movie soundtrack" />
+        </form>
+
       </div>
-      <div class="row">
-        <div class="col-sm-12">
-          <h3>Enter Your Favorite Movie...</h3>
-          <input type="text" id="myMovie" value="">
+    </div>
+    <div class="row">
+      <div class="col-sm-5">
+        
+        <p id="myMovie"></p>
+        <div id="resultsBox"></div>
+
+      </div>
+      <div class="col-sm-5 text-left">
+
+        <script type="text/javascript">
+
+          function go_getclip() {
+            var base_url = 'http://www.youtube.com/embed?listType=search&list=';
+            var search_field = document.getElementById('myMovie').value;
+            var target_url = base_url + search_field + " movie clips";
+            var ifr = document.getElementById('youriframe');
+            ifr.src = target_url;
+            return false;
+          }
+
+        </script>
+
+        
+
+        
+        <div class="youtube">
+
+          <iframe id="youriframe" width="640" height="360"></iframe>
           <p></p>
-          <h3></h3>
-          <button id="submitBtn">Try It</button>
-          <p id="myMovie"></p>
         </div>
-        <div class="row">
-          <div class="col-sm-6">
-            <h5>Search Results</h5>
-            <div id="resultsBox"></div>
-          </div>
-          <div class="col-sm-3">
-            <h5>Gifs</h5>
-            <div id="gifsBox"></div>
-          </div>
-          <div class="col-sm-3">
-            <h5>Recent Searches</h5>
-            <div id="recentSrchs"></div>
-          </div>
+        <script>
+          function go_getmusic() {
+            var base_url = 'http://www.youtube.com/embed?listType=search&list=';
+            var search_field = document.getElementById('myMovie').value;
+            var target_url = base_url + search_field + " movie soundtrack";
+            var ifr = document.getElementById('youriframe');
+            ifr.src = target_url;
+            return false;
+          }
+        </script>
+
+<script>
+  function go_gettrailer() {
+    var base_url = 'http://www.youtube.com/embed?listType=search&list=';
+    var search_field = document.getElementById('myMovie').value;
+    var target_url = base_url + search_field + " movie trailer";
+    var ifr = document.getElementById('youriframe');
+    ifr.src = target_url;
+    return false;
+  }
+</script>
+
+        <div class="gifs">
+          <h5>Gifs</h5>
+          <div id="gifsBox"></div>
+        </div>
+
+      </div>
+      <div class="col-sm-2">
+        <div class="display-recent">
+          <h5>Recent Searches</h5>
+          <div id="recentSrchs"></div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="footer">
-    <footer>
-
-      <!-- <audio controls loop> -->
-      <!-- <source src="assets/audio/indaclub_instrumental.mp3" type="audio/mpeg"> -->
-      <!-- </audio> -->
-    </footer>
-  </div>
 
 
   <!--JavaScript at end of body for optimized loading-->
   <script src="https://code.jquery.com/jquery.js"></script>
+  <!-- this jquery may need to be min.js  -->
   <script src="assets/javascript/drewsjava.js"></script>
+  <script src="https://apis.google.com/js/client.js?onload=init"></script>
 </body>
 
 </html>
