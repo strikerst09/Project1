@@ -68,6 +68,7 @@ button:hover, input[type=submit]:hover {
 }
 .gifClass {
     width: 100%;
+    margin-bottom: 50px;
 }
 .youtube {
     overflow: hidden;
@@ -87,6 +88,6 @@ button:hover, input[type=submit]:hover {
       text-align: center;
   }
   .results {
-      margin-bottom: 20px;
+      margin-bottom: 100px;
     
   }
