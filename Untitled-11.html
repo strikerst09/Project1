@@ -21,26 +21,43 @@
     <div class="row">
       <div class="col-sm-12">
         <h1>Your Favorite Movie!!!</h1>
+        <h2>Movie Search Options...</h2>
+
+        <input type="text" placeholder="enter movie title here" id="myMovie" value="">
+        <button id="submitBtn">movie info</button>
+        
+        <form onsubmit="go_gettrailer(); return false;">
+          <input type="hidden" id="myMovie" />
+          <input type="submit" value="movie trailer" />
+        </form>
+
+        <form onsubmit="go_getclip(); return false;">
+          <input type="hidden" id="myMovie" />
+          <input type="submit" value="movie clips" />
+        </form>
+
+        <form onsubmit="go_getmusic(); return false;">
+          <input type="hidden" id="myMovie" />
+          <input type="submit" value="movie soundtrack" />
+        </form>
+
       </div>
     </div>
     <div class="row">
       <div class="col-sm-5">
-        <h3>Movie Info...</h3>
-        <input type="text" id="myMovie" value="">
-        <button id="submitBtn">Search</button>
+        
         <p id="myMovie"></p>
         <div id="resultsBox"></div>
 
       </div>
-      <div class="col-sm-5 text-center">
-        <h3>Movie Clips...</h3>
+      <div class="col-sm-5 text-left">
 
         <script type="text/javascript">
 
-          function go_get() {
+          function go_getclip() {
             var base_url = 'http://www.youtube.com/embed?listType=search&list=';
-            var search_field = document.getElementById('yourtextfield').value;
-            var target_url = base_url + search_field + " movie clips";
+            var search_field = document.getElementById('myMovie').value;
+            var target_url = base_url + search_field + " movieclips.com";
             var ifr = document.getElementById('youriframe');
             ifr.src = target_url;
             return false;
@@ -48,15 +65,36 @@
 
         </script>
 
-        <form onsubmit="go_get(); return false;">
-          <input type="text" id="yourtextfield" />
-          <input type="submit" value="Search" />
-        </form>
+        
+
+        
         <div class="youtube">
 
           <iframe id="youriframe" width="640" height="360"></iframe>
           <p></p>
         </div>
+        <script>
+          function go_getmusic() {
+            var base_url = 'http://www.youtube.com/embed?listType=search&list=';
+            var search_field = document.getElementById('myMovie').value;
+            var target_url = base_url + search_field + " movie soundtrack";
+            var ifr = document.getElementById('youriframe');
+            ifr.src = target_url;
+            return false;
+          }
+        </script>
+
+<script>
+  function go_gettrailer() {
+    var base_url = 'http://www.youtube.com/embed?listType=search&list=';
+    var search_field = document.getElementById('myMovie').value;
+    var target_url = base_url + search_field + " movie trailer";
+    var ifr = document.getElementById('youriframe');
+    ifr.src = target_url;
+    return false;
+  }
+</script>
+
         <div class="gifs">
           <h5>Gifs</h5>
           <div id="gifsBox"></div>

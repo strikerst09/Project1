@@ -4,19 +4,24 @@ body {
     background-repeat: repeat-y;
     background-color: rgb(131, 202, 179);
 }
-h1, h3, h5 {
+h1, h3, h5, h2 {
     color: black;
     -webkit-text-fill-color: white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
     font-weight: bold;
 }
+form {
+    display: inline-block;
+}
 
 h1 {
     font-size: 50px;
     text-align: center;
 }
-
+h2 {
+    text-align: center;
+}
 h5 {
     font-size: 30px;
     text-align: center;
@@ -63,6 +68,7 @@ button:hover, input[type=submit]:hover {
 }
 .gifClass {
     width: 100%;
+    margin-bottom: 50px;
 }
 .youtube {
     overflow: hidden;
@@ -80,4 +86,8 @@ button:hover, input[type=submit]:hover {
   }
   #recentSrchs {
       text-align: center;
+  }
+  .results {
+      margin-bottom: 100px;
+    
   }
