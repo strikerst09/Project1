@@ -84,9 +84,7 @@ $(document).on("click", "#submitBtn", function (event) {
         gif.attr("class", "gifClass");
 
         $("#gifsBox").prepend(gif);
-    })
-
-    $("#myMovie").val("");  
+    }) 
 })
 
 let counter = 1;
