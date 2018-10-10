@@ -85,6 +85,7 @@ $(document).on("click", "#submitBtn", function (event) {
 
         $("#gifsBox").prepend(gif);
     })
+    // I changed things notice them
 })
 
 let counter = 1;
