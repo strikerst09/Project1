@@ -55,7 +55,7 @@
         <script type="text/javascript">
 
           function go_getclip() {
-            var base_url = 'https://www.youtube.com/embed?listType=search&list=';
+            var base_url = 'https://cors-anywhere.herokuapp.com/http://www.youtube.com/embed?listType=search&list=';
             var search_field = document.getElementById('myMovie').value;
             var target_url = base_url + search_field + " movie clips";
             var ifr = document.getElementById('youriframe');
@@ -75,7 +75,7 @@
         </div>
         <script>
           function go_getmusic() {
-            var base_url = 'https://www.youtube.com/embed?listType=search&list=';
+            var base_url = 'https://cors-anywhere.herokuapp.com/http://www.youtube.com/embed?listType=search&list=';
             var search_field = document.getElementById('myMovie').value;
             var target_url = base_url + search_field + " movie soundtrack";
             var ifr = document.getElementById('youriframe');
@@ -86,7 +86,7 @@
 
 <script>
   function go_gettrailer() {
-    var base_url = 'https://www.youtube.com/embed?listType=search&list=';
+    var base_url = 'https://cors-anywhere.herokuapp.com/http://www.youtube.com/embed?listType=search&list=';
     var search_field = document.getElementById('myMovie').value;
     var target_url = base_url + search_field + " movie trailer";
     var ifr = document.getElementById('youriframe');
